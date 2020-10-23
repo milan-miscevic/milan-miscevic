@@ -14,3 +14,16 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+```php
+$milan = new Person([
+    'firstName' => 'Milan',
+    'lastName' => 'Miščević',
+    'birthDate' => '1985-10-11',
+    'birthLocation' => 'Bihać, Bosnia and Herzegovina',
+]);
+
+$milan->setCity('Banja Luka, Bosnia and Herzegovina'); // 1992
+$milan->learn('Turbo Pascal'); // 2001
+$milan->learn('PHP'); // 2003
+```
