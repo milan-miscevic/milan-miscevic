@@ -16,14 +16,27 @@ Here are some ideas to get you started:
 -->
 
 ```php
+$bihac = new City('Bihać, Bosnia and Herzegovina');
+
 $milan = new Person([
     'firstName' => 'Milan',
     'lastName' => 'Miščević',
-    'birthDate' => '1985-10-11',
-    'birthLocation' => 'Bihać, Bosnia and Herzegovina',
+    'birthDate' => new DateTimeImmutable('1985-10-11 23:00:00'),
+    'birthLocation' => $bihac,
 ]);
 
-$milan->setCity('Banja Luka, Bosnia and Herzegovina'); // 1992
-$milan->learn('Turbo Pascal'); // 2001
-$milan->learn('PHP'); // 2003
+$banjaluka = new City('Banja Luka, Bosnia and Herzegovina');
+$milan->setCity($banjaluka); // 1992
+
+$turboPascal = new ProgrammingLanguage('Turbo Pascal');
+$php = new ProgrammingLanguage('PHP');
+
+$milan->learn($turboPascal); // 2001, the first programming language
+$milan->learn($php); // 2003, the first web development steps
+
+$etf = new Faculty('Faculty of Electrical Engineering', $banjaluka);
+$etf->enroll($milan); // 2004
+$etf->graduate($milan); // 2010
+
+$inRecursion = new Agency('inRecursion', $milan) // 2015, my agency
 ```
