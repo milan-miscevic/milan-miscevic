@@ -16,7 +16,8 @@ Here are some ideas to get you started:
 -->
 
 ```php
-$bihac = new City('Bihać, Bosnia and Herzegovina');
+$bih = new Country('Bosnia and Herzegovina')
+$bihac = new City('Bihać', $bih);
 
 $milan = new Person([
     'firstName' => 'Milan',
@@ -25,7 +26,7 @@ $milan = new Person([
     'birthLocation' => $bihac,
 ]);
 
-$banjaluka = new City('Banja Luka, Bosnia and Herzegovina');
+$banjaluka = new City('Banja Luka', $bih);
 $milan->setCity($banjaluka); // 1992
 
 $turboPascal = new ProgrammingLanguage('Turbo Pascal');
