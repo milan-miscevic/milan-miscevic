@@ -37,7 +37,8 @@ $milan->learn($php); // 2003, the first web development steps
 
 $etf = new Faculty('Faculty of Electrical Engineering', $banjaluka);
 $etf->enroll($milan); // 2004
-$etf->graduate($milan); // 2010
+$etf->graduate($milan); // 2010, engineer's degree
+$etf->graduate($milan); // 2020, master's degree
 
 $inRecursion = new Agency('inRecursion', $milan) // 2015, my agency
 ```
