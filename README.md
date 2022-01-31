@@ -19,15 +19,15 @@ Here are some ideas to get you started:
 $bih = new Country('Bosnia and Herzegovina')
 $bihac = new City('Bihać', $bih);
 
-$milan = new Person([
-    'firstName' => 'Milan',
-    'lastName' => 'Miščević',
-    'birthDate' => new DateTimeImmutable('1985-10-11 23:00:00'),
-    'birthLocation' => $bihac,
-]);
+$milan = new Person(
+    firstName: 'Milan',
+    lastName: 'Miščević',
+    birthDate: new DateTimeImmutable('1985-10-11 23:00:00'),
+    birthLocation: $bihac,
+);
 
 $banjaluka = new City('Banja Luka', $bih);
-$milan->setCity($banjaluka); // 1992
+$milan->moveTo($banjaluka); // 1992
 
 $turboPascal = new ProgrammingLanguage('Turbo Pascal');
 $php = new ProgrammingLanguage('PHP');
@@ -40,5 +40,11 @@ $etf->enroll($milan); // 2004
 $etf->graduate($milan); // 2010, engineer's degree
 $etf->graduate($milan); // 2020, master's degree
 
-$inRecursion = new Agency('inRecursion', $milan) // 2015, my agency
+$inRecursion = new Agency('inRecursion', $banjaluka);
+$milan->start($inRecursion); // 2015
+$milan->close($inRecursion); // 2021
+
+$germany = new Country('Germany');
+$berlin = new City('Berlin', $germany);
+$milan->moveTo($berlin); // 2021
 ```
